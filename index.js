@@ -25,6 +25,11 @@ const removeUser = (socketId) => {
 const getUser = (userId) => {
     return users.find(user => user.sub === userId);
 };
+io.use((socket, next) => {
+    // Set CORS headers here
+    socket.handshake.headers['Access-Control-Allow-Origin'] = 'https://whatsapp.mrzera.xyz';
+    next();
+});
 
 io.on('connection', (socket) => {
     console.log('user connected');
