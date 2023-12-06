@@ -6,9 +6,11 @@ const httpServer = createServer();
 
 const io = new Server(httpServer, {
     cors: {
-        origin: '*',
-        methods: ['GET', 'POST'],
-    },
+    origin: "https:whatsapp.mrzera.xyz",
+    methods: ["GET", "POST"],
+    allowedHeaders: ["my-custom-header"],
+    credentials: true
+  }
 });
 
 let users = [];
