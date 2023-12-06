@@ -56,7 +56,7 @@ io.on('connection', (socket) => {
     });
 });
 
-httpServer.listen('0.0.0.0', () => {
+httpServer.listen(1000, () => {
     console.log('Server is listening on port 1000');
 });
 
