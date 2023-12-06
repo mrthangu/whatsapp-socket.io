@@ -1,14 +1,18 @@
 import { createServer } from 'http';
 import { Server } from 'socket.io';
+import cors from 'cors';
 
 const httpServer = createServer();
+
 const io = new Server(httpServer, {
     cors: {
         origin: 'https://whatsapp.mrzera.xyz',
+        methods: ['GET', 'POST'],
     },
 });
 
 let users = [];
+
 
 const addUser = (userData, socketId) => {
     !users.some(user => user.sub === userData.sub) && users.push({ ...userData, socketId });
