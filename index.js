@@ -6,7 +6,7 @@ const httpServer = createServer();
 
 const io = new Server(httpServer, {
     cors: {
-    origin: "https:whatsapp.mrzera.xyz",
+    origin: "https://whatsapp.mrzera.xyz",
     methods: ["GET", "POST"],
     allowedHeaders: ["my-custom-header"],
     credentials: true
